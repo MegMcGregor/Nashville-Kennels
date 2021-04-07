@@ -5,20 +5,21 @@ import "./AnimalDetail.css";
 import { useParams, useHistory } from "react-router-dom";
 
 export const AnimalDetail = () => {
-    const [animal, setAnimal] = useSate({ name: "", breed: "" });
+    const [animal, setAnimal] = useState({ name: "", breed: "" });
 
     const { animalId } = useParams();
     const history = useHistory();
 
     useEffect(() => {
         console.log("useEffect", animalId)
+        getAnimalById(animalId)
             .then(animal => {
                 setAnimal({
                     name: animal.name,
                     breed: animal.breed
                 });
             });
-    }, [AnimalId])
+    }, [animalId])
 
     return (
         <section className="animal">
