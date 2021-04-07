@@ -18,7 +18,9 @@ export const EmployeeList = () => {
 
     return (
         <div className="container-cards">
-            {employees.map(employee => <EmployeeCard key={employee.id} employee={employee} />)}
+            {employees.map(employee => <EmployeeCard 
+            key={employee.id} 
+            employee={employee} />)}
         </div>
     );
 };
